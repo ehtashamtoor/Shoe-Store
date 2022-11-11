@@ -91,32 +91,40 @@ const initial_State = {
             size: 7
         },
     ],
-    added_items:[],
-    total:0,
+    added_items: [],
+    total: 0,
 }
 
 function ShoppingCartReducer(state = initial_State, action) {
     switch (action.type) {
         case constants.ADD_ITEM:
-            const selected_item = state.products[action.id-1];
+            const selected_item = state.products[action.id - 1];
             const item_exist = state.added_items.find(item => item.id === action.id);
-            
-            if(item_exist){
+
+            if (item_exist) {
                 selected_item.quantity += 1;
-                return{
+                return {
                     ...state,
                     total: state.total + selected_item.price
                 }
-            }else{
+            } else {
                 selected_item.quantity = 1;
-                return{
+                return {
                     ...state,
-                    added_items:[...state.added_items, selected_item],
+                    added_items: [...state.added_items, selected_item],
                     total: state.total + selected_item.price
                 }
             }
 
-        // case constants.DEL_TRANS:
+        case constants.INC_ITEM:
+            const item = state.added_items.find(item => item.id === action.id);
+            item.quantity += 1;
+            // console.log(item)
+            return {
+                ...state,
+                added_items: [...state.added_items, item],
+                total: state.total + item.price
+            }
         // state = {
         //     ...state,
         //     transactions: [...state.transactions.filter(transaction => transaction.id !== action.payload)]

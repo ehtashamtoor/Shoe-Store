@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -33,7 +33,7 @@ export const Navbar = () => {
                     </li>
                 </ul>
                 <div id='cart'>
-                    <Link className="nav-link" to="/">
+                    <Link className="nav-link" to="/products/yourCart">
                         <FaCartPlus style={Cartstyle} />
                         <span id='overlayOnIcon'>{numOfItems}</span>
                     </Link>
