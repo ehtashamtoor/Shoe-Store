@@ -1,4 +1,7 @@
 import React from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaPlusCircle } from "react-icons/fa";
@@ -9,17 +12,27 @@ export const Products = () => {
     const { All_items } = useSelector(state => state)
 
     // console.log(All_items.products);
+    // console.log(All_items.added_items);
 
     const dispatch = useDispatch();
 
-    const AddItem = (id) =>{
-        // console.log(id)
+    const AddItem = (id) => {
+
+        // toast styling
+        const notify = () => toast(`${All_items.products[id - 1].name} added to Cart`, {
+            position: toast.POSITION.TOP_RIGHT,
+            autoClose: 1500,
+        });
+
+        notify();
+        // dispatching action ADD_ITEM
         dispatch(ADD_ITEM(id));
     }
 
     const Cartstyle = { fontSize: "3em", color: 'green', position: 'absolute', bottom: 100, right: 0, }
     return (
         <div>
+            <ToastContainer />
             <h2 className='text-center mt-3'>Our specialized shoes</h2>
             <div id='productsWrapper' className='container'>
                 <div className="row" id='productsRow'>
@@ -35,8 +48,8 @@ export const Products = () => {
                                 <Link to={`/products/${item.id}`}>
                                     <button className='btn btn-info'>Have a look</button>
                                 </Link>
-                                <button style={{border:'none'}} >
-                                    <FaPlusCircle style={Cartstyle} onClick={()=>{AddItem(item.id)}}/>
+                                <button style={{ border: 'none' }} >
+                                    <FaPlusCircle style={Cartstyle} onClick={() => { AddItem(item.id) }} />
                                 </button>
                             </div>
                         })
