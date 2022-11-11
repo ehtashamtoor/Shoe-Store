@@ -9,6 +9,7 @@
     padding: 5px;
     margin: 10px;
     box-shadow: 0 0 4px gray;
+    position: relative;
 }
 
 #productsRow{
