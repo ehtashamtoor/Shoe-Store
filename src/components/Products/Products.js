@@ -1,13 +1,21 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { FaPlusCircle } from "react-icons/fa";
+import { ADD_ITEM } from '../../actions/allActions';
 
 export const Products = () => {
 
     const { All_items } = useSelector(state => state)
 
     // console.log(All_items.products);
+
+    const dispatch = useDispatch();
+
+    const AddItem = (id) =>{
+        // console.log(id)
+        dispatch(ADD_ITEM(id));
+    }
 
     const Cartstyle = { fontSize: "3em", color: 'green', position: 'absolute', bottom: 100, right: 0, }
     return (
@@ -27,8 +35,8 @@ export const Products = () => {
                                 <Link to={`/products/${item.id}`}>
                                     <button className='btn btn-info'>Have a look</button>
                                 </Link>
-                                <button style={{border:'none'}} onClick={()=>{console.log(item)}}>
-                                    <FaPlusCircle style={Cartstyle} />
+                                <button style={{border:'none'}} >
+                                    <FaPlusCircle style={Cartstyle} onClick={()=>{AddItem(item.id)}}/>
                                 </button>
                             </div>
                         })

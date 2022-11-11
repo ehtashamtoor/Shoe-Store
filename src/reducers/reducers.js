@@ -1,4 +1,4 @@
-// import constants from '../actions/allActions'
+import constants from '../actions/allActions'
 
 const initial_State = {
     products: [
@@ -97,12 +97,25 @@ const initial_State = {
 
 function ShoppingCartReducer(state = initial_State, action) {
     switch (action.type) {
-        // case constants.ADD_TRANS:
-        //     state = {
-        //         ...state,
-        //         transactions: [...state.transactions, action.payload]
-        //     }
-        //     break;
+        case constants.ADD_ITEM:
+            const selected_item = state.products[action.id-1];
+            const item_exist = state.added_items.find(item => item.id === action.id);
+            
+            if(item_exist){
+                selected_item.quantity += 1;
+                return{
+                    ...state,
+                    total: state.total + selected_item.price
+                }
+            }else{
+                selected_item.quantity = 1;
+                return{
+                    ...state,
+                    added_items:[...state.added_items, selected_item],
+                    total: state.total + selected_item.price
+                }
+            }
+            break;
 
         // case constants.DEL_TRANS:
         // state = {

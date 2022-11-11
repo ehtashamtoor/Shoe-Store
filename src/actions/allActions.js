@@ -1,37 +1,15 @@
 
 const constants = {
-    ADD_TRANS: "ADD_TRANS",
-    DEL_TRANS: "DEL_TRANS",
-    EDIT_TRANS: "EDIT_TRANS",
+    ADD_ITEM: "ADD_ITEM",
 }
 
-export const AddTrans = (transaction) => {
+export const ADD_ITEM = (id) => {
     return (dispatch) =>{
         dispatch({
-            type: constants.ADD_TRANS,
-            payload: transaction,
+            type: constants.ADD_ITEM,
+            id,
         })
     }
 }
-
-export const DelTrans = (id) => {
-    return (dispatch) => {
-        dispatch({
-            type: constants.DEL_TRANS,
-            payload: id,
-        })
-    }
-}
-
-export const EditTrans = (oldTransaction, newTransaction) => {
-    return (dispatch) => {
-        dispatch({
-            type: constants.EDIT_TRANS,
-            payload: { oldTransaction, newTransaction }
-        })
-    }
-}
-
-
 
 export default constants;
