@@ -115,7 +115,6 @@ function ShoppingCartReducer(state = initial_State, action) {
                     total: state.total + selected_item.price
                 }
             }
-            break;
 
         // case constants.DEL_TRANS:
         // state = {

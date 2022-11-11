@@ -20,7 +20,7 @@ export const Products = () => {
 
         // toast styling
         const notify = () => toast(`${All_items.products[id - 1].name} added to Cart`, {
-            position: toast.POSITION.TOP_RIGHT,
+            position: toast.POSITION.TOP_CENTER,
             autoClose: 1500,
         });
 

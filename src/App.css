@@ -1,9 +1,29 @@
 
 
-.nav-wrapper{
-    background: #1f7b99;
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
 }
-
+#navbarNav{
+    display: flex;
+}
+#cart{
+    position: relative;
+}
+#overlayOnIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    color: black;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 #productBox{
     text-align: center;
     padding: 5px;
