@@ -19,7 +19,7 @@ export const Products = () => {
     const AddItem = (id) => {
 
         // toast styling
-        const notify = () => toast(`${All_items.products[id - 1].name} added to Cart`, {
+        const notify = () => toast.success(`${All_items.products[id - 1].name} added to Cart`, {
             position: toast.POSITION.TOP_CENTER,
             autoClose: 1500,
         });

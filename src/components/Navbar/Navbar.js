@@ -10,7 +10,7 @@ export const Navbar = () => {
     const Cartstyle = { fontSize: "2em", color: 'red' }
 
     const { All_items } = useSelector(state => state)
-    let [numOfItems, setNumOfItems] = useState(0);
+    let [numOfItems, setNumOfItems] = useState();
 
 
     useEffect(() => {
