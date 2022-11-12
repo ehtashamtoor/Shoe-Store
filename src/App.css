@@ -29,6 +29,14 @@
     top: 0;
     right: 0;
 }
+
+/* products */
+.btnWrapper{
+    text-align: center;
+}
+.btnWrapper button{
+    margin: 1rem;
+}
 #productBox{
     text-align: center;
     padding: 5px;

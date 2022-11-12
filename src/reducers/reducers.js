@@ -6,7 +6,7 @@ const initial_State = {
             id: 1,
             name: "Nike Phantom Venom FG Black Red",
             img: "https://i0.wp.com/buybest.pk/wp-content/uploads/2019/09/socceraustralia_my25_4.jpg?fit=600%2C398&ssl=1",
-            "category": "nike",
+            category: "nike",
             price: 6000,
             size: 7
         },
