@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
@@ -12,10 +12,15 @@ export const Navbar = () => {
     const { All_items } = useSelector(state => state)
     let [numOfItems, setNumOfItems] = useState();
 
-
+    const overlayIcon = useRef();
     useEffect(() => {
         numOfItems = All_items.added_items.length;
         setNumOfItems(numOfItems);
+        if(numOfItems > 0){
+            overlayIcon.current.style.visibility = 'visible'
+        }else{
+            overlayIcon.current.style.visibility = 'hidden'
+        }
     }, [All_items.added_items.length])
 
 
@@ -35,7 +40,7 @@ export const Navbar = () => {
                 <div id='cart'>
                     <Link className="nav-link" to="/products/yourCart">
                         <FaCartPlus style={Cartstyle} />
-                        <span id='overlayOnIcon'>{numOfItems}</span>
+                        <span id='overlayOnIcon' ref={overlayIcon}>{numOfItems}</span>
                     </Link>
                 </div>
             </div>
