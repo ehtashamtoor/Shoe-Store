@@ -37,9 +37,9 @@ export const Products = () => {
             <div id='productsWrapper' className='container'>
                 <div className="row" id='productsRow'>
                     {
-                        All_items.products.map((item) => {
+                        All_items.products.map((item, index) => {
 
-                            return <div className="col-lg-3 col-md-5 col-sm-8" id="productBox" key={item.id}>
+                            return <div className="col-lg-3 col-md-5 col-sm-8" id="productBox" key={index}>
                                 <h6><strong>{item.name}</strong></h6>
                                 <img src={item.img} alt="img" className='img-fluid' />
                                 <h4>Rs: {item.price}</h4>

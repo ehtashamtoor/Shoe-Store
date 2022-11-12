@@ -100,6 +100,8 @@ function ShoppingCartReducer(state = initial_State, action) {
         case constants.ADD_ITEM:
             const selected_item = state.products[action.id - 1];
             const item_exist = state.added_items.find(item => item.id === action.id);
+            // console.log(item_exist)
+            // console.log(selected_item)
 
             if (item_exist) {
                 selected_item.quantity += 1;
@@ -117,29 +119,42 @@ function ShoppingCartReducer(state = initial_State, action) {
             }
 
         case constants.INC_ITEM:
-            const item = state.added_items.find(item => item.id === action.id);
-            item.quantity += 1;
-            // console.log(item)
+            // console.log(action.id)
+            const sel_item = state.products.find(item => item.id === action.id);
+            sel_item.quantity += 1;
+
             return {
                 ...state,
-                added_items: [...state.added_items, item],
-                total: state.total + item.price
+                total: state.total + sel_item.price,
             }
-        // state = {
-        //     ...state,
-        //     transactions: [...state.transactions.filter(transaction => transaction.id !== action.payload)]
-        // }
-        // break;
 
-        // case constants.EDIT_TRANS:
-        // state = {
-        //     ...state,
-        //     transactions: [...state.transactions.map(transaction => transaction.id === action.payload.oldTransaction.id ? action.payload.newTransaction : transaction)]
-        // }
-        // break;
+        case constants.DEC_ITEM:
+            const sele_item = state.products.find(item => item.id === action.id);
+            sele_item.quantity -= 1;
+
+            return {
+                ...state,
+                total: state.total - sele_item.price,
+            }
+
+        case constants.REMOVE_ITEM:
+
+            return {
+                ...state,
+                added_items: [...state.added_items.filter((item) => { return item.id !== action.id })],
+            }
+        case constants.DISMANTLE_ITEM:
+            const itemToRemove = state.added_items.find(item => item.id === action.id);
+            let newTotal = state.total - (itemToRemove.price * itemToRemove.quantity);
+            return {
+                ...state,
+                added_items: [...state.added_items.filter((item) => { return item.id !== action.id })],
+                total: newTotal,
+            }
+
+        default:
+            return state;
     }
-
-    return state;
 }
 
 export default ShoppingCartReducer;

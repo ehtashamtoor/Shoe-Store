@@ -1,4 +1,8 @@
-
+.Homewrapper{
+    background: rgb(25, 84, 123);
+    height: 90vh;
+   color: red;
+}
 
 .navbar{
     display: flex;
