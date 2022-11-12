@@ -54,3 +54,40 @@
 .img{
     min-width: 40%;
 }
+
+
+
+/* generate bill */
+.invoiceTitle{
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgb(238, 151, 10);
+}
+
+
+.invoicewrapper{
+    background: lightblue;
+    margin: auto;
+}
+
+.invoice{
+    margin: auto;
+}
+
+.invoice td, th{
+    padding: 10px;
+}
+
+
+
+.PayBtn{
+    margin: auto;
+    width: -webkit-fill-available;
+}
+
+.total{
+    text-align: right;
+}
