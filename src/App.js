@@ -7,6 +7,7 @@ import { Navbar } from './components/Navbar/Navbar';
 import { ProductItem } from './components/ProductItem/ProductItem';
 import { Products } from './components/Products/Products';
 import ShoppingCartPage from './components/shopping Cart Page/ShoppingCartPage';
+import GenerateBill from './components/GenerateBill/GenerateBill';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
           <Route path='/products' element={<Products />} />
           <Route path='/products/:productId' element={<ProductItem />} />
           <Route path='/products/yourCart' element={<ShoppingCartPage />} />
+          <Route path='/products/yourCart/bill' element={<GenerateBill />} />
         </Routes>
       </Router>
     </div>

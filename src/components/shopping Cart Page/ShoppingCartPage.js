@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { FaPlusSquare, FaMinusSquare } from 'react-icons/fa';
 
 import { INC_ITEM, DEC_ITEM, REMOVE_ITEM, DISMANTLE_ITEM } from '../../actions/allActions';
+import { Link } from 'react-router-dom';
 
 const ShoppingCartPage = () => {
 
@@ -73,6 +74,10 @@ const ShoppingCartPage = () => {
                                 </div> : RemoveItem(item.id)
                         })
                     }
+                    {
+                        All_items.added_items.length > 0 ? <Link to="/products/yourCart/bill"><button className="btn btn-success"style={{width:"80vw"}} ><strong>Get Bill</strong></button></Link> : <h2>Oops!🙄 No item in Cart</h2>
+                    }
+                    
                 </div>
 
             </div>
