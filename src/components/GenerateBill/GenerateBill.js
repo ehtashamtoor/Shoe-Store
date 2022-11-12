@@ -1,11 +1,30 @@
 import React from 'react'
+import { useRef } from 'react';
 import { useSelector } from 'react-redux'
+
+import html2canvas from 'html2canvas';
+import { jsPDF } from 'jspdf';
 
 const GenerateBill = () => {
 
     const { All_items } = useSelector(state => state);
+    const makePdf = useRef()
 
 
+    const getPdf = async () => {
+        const element = makePdf.current;
+        const canvas = await html2canvas(element);
+        const data = canvas.toDataURL('image/jpg');
+
+        const pdf = new jsPDF();
+        const imgProperties = pdf.getImageProperties(data);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight =
+            (imgProperties.height * pdfWidth) / imgProperties.width;
+
+        pdf.addImage(data, 'JPG', 0, 0, pdfWidth, pdfHeight);
+        pdf.save('invoice.pdf');    
+    }
     return (
         <div className='container'>
             <div className="row">
@@ -13,7 +32,7 @@ const GenerateBill = () => {
                     <h2>Invoice</h2>
                     <p>Thanks for Shopping With Us!🤩</p>
                 </div>
-                <div className="col-md-6 col-sm-12 invoicewrapper">
+                <div className="col-md-6 col-sm-12 invoicewrapper" ref={makePdf} >
                     <table className='invoice'>
                         <thead>
                             <th>Image</th>
@@ -38,12 +57,12 @@ const GenerateBill = () => {
                                     <strong>Total:</strong>
                                 </td>
                                 <td colSpan={3}>
-                                    <strong>{All_items.total}</strong>
+                                    <strong>Rs:{All_items.total}</strong>
                                 </td>
                             </tr>
                             <tr>
                                 <td colSpan={4}>
-                                    <button className="btn btn-info PayBtn">Pay Bill</button>
+                                    <button className="btn btn-info PayBtn" onClick={() => { getPdf() }}>Pay Bill</button>
                                 </td>
                             </tr>
                         </tbody>
