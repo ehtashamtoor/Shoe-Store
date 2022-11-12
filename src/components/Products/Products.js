@@ -47,7 +47,7 @@ export const Products = () => {
         })
 
         setfFilteredItems([...filteredItems])
-        console.log(filteredItems)
+        // console.log(filteredItems)
     }
     const Cartstyle = { fontSize: "3em", color: 'green', position: 'absolute', bottom: 100, right: 0, }
     return (
@@ -65,7 +65,7 @@ export const Products = () => {
                 </div>
                 <div className="row" id='productsRow'>
                     {
-                        filteredItems ?
+                        filteredItems.length > 0 ?
                             filteredItems.map((item, index) => {
                                 return <div className="col-lg-3 col-md-5 col-sm-8" id="productBox" key={index}>
                                     <h6><strong>{item.name}</strong></h6>
