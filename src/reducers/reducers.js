@@ -90,6 +90,46 @@ const initial_State = {
             price: 9000,
             size: 7
         },
+        {
+            id: 12,
+            name: "Nike Phantom By You",
+            img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/5cd5ed21-1742-4273-9cca-3855e7782bcc/custom-nike-phantom-gt-elite-by-you.png",
+            category: "nike",
+            price: 11000,
+            size: 9
+        },
+        {
+            id: 13,
+            name: "Nike Zoom SuperFly 9 Elite KM",
+            img: "https://static.nike.com/a/images/t_PDP_1728_v1/f_auto,b_rgb:f5f5f5/a4243b99-bc40-4090-bde7-2b8c5e21e649/zoom-mercurial-superfly-9-elite-km-fg-football-boot-RbvQKW.png",
+            category: "nike",
+            price: 7000,
+            size: 9
+        },
+        {
+            id: 14,
+            name: "PUMA FUTURE 5.1 NETFIT MXSG",
+            img: "https://images.puma.net/images/105788/02/fnd/AUS/w/1000/h/1000/bg/255,255,255",
+            category: "puma",
+            price: 7500,
+            size: 7
+        },
+        {
+            id: 15,
+            name: "PREDATOR EDGE 94+ FIRM GROUND BOOTS",
+            img: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/ae1f312f90db47218e56aed8013f1488_9366/Predator_Edge_94+_Firm_Ground_Boots_Black_HP9135_22_model.jpg",
+            category: "predator",
+            price: 9500,
+            size: 8
+        },
+        {
+            id: 16,
+            name: "PREDATOR MUTATOR 20.1 ARTIFICIAL GRASS BOOTS",
+            img: "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/5087e4b9a4ac41d09b05abe30060d123_9366/Predator_Mutator_20.1_Artificial_Grass_Boots_Green_EH2890_01_standard.jpg",
+            category: "predator",
+            price: 9500,
+            size: 8
+        },
     ],
     added_items: [],
     total: 0,

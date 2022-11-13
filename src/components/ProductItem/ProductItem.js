@@ -49,8 +49,7 @@ export const ProductItem = () => {
                             <h4 className="card-title">Size: {selected_item.size}</h4>
                             <h4 className="card-title">Type: {selected_item.category}</h4>
                             <p className="card-text">
-                                This is a wider card with supporting text below as a natural lead-in
-                                to additional content. This content is a little bit longer.
+                                Delivery time is 3 weeks or less.
                             </p>
                         </div>
                         <button style={{ border: 'none' }} >
