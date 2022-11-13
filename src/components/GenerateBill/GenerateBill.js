@@ -1,9 +1,5 @@
 import React from 'react'
-import { useRef } from 'react';
 import { useSelector } from 'react-redux'
-
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
 
 const GenerateBill = () => {
 
