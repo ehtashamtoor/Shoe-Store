@@ -8,23 +8,7 @@ import { jsPDF } from 'jspdf';
 const GenerateBill = () => {
 
     const { All_items } = useSelector(state => state);
-    const makePdf = useRef()
 
-
-    const getPdf = async () => {
-        const element = makePdf.current;
-        const canvas = await html2canvas(element);
-        const data = canvas.toDataURL('image/jpg');
-
-        const pdf = new jsPDF();
-        const imgProperties = pdf.getImageProperties(data);
-        const pdfWidth = pdf.internal.pageSize.getWidth();
-        const pdfHeight =
-            (imgProperties.height * pdfWidth) / imgProperties.width;
-
-        pdf.addImage(data, 'JPG', 0, 0, pdfWidth, pdfHeight);
-        pdf.save('invoice.pdf');    
-    }
     return (
         <div className='container'>
             <div className="row">
@@ -32,7 +16,7 @@ const GenerateBill = () => {
                     <h2>Invoice</h2>
                     <p>Thanks for Shopping With Us!🤩</p>
                 </div>
-                <div className="col-md-6 col-sm-12 invoicewrapper" ref={makePdf} >
+                <div className="col-md-6 col-sm-12 invoicewrapper" >
                     <table className='invoice'>
                         <thead>
                             <th>Image</th>
@@ -62,7 +46,7 @@ const GenerateBill = () => {
                             </tr>
                             <tr>
                                 <td colSpan={4}>
-                                    <button className="btn btn-info PayBtn" onClick={() => { getPdf() }}>Pay Bill</button>
+                                    <button className="btn btn-info PayBtn">Pay Bill</button>
                                 </td>
                             </tr>
                         </tbody>

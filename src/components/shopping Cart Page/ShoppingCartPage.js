@@ -45,7 +45,7 @@ const ShoppingCartPage = () => {
         <>
             <div className='container'>
                 <div className="row p-2">
-                    <h2>TOTAL:{All_items.total}</h2>
+                    {/* <h2>TOTAL:{All_items.total}</h2> */}
                     {
                         All_items.added_items.map((item, index) => {
 
