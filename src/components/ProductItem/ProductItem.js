@@ -31,18 +31,18 @@ export const ProductItem = () => {
         dispatch(ADD_ITEM(id));
     }
 
-    const Cartstyle = { fontSize: "5em", color: 'green', position: 'absolute', bottom: 200, right: 10, }
+    const Cartstyle = { fontSize: "300%", color: 'green', position: 'absolute', bottom: 100, right:1, }
 
     return <>
         {
             
-            <div className="card mb-2 item" style={{ maxWidth: 600 }}>
+            <div className="card mb-2 item" style={{ maxWidth: 600, minWidth:260 }}>
                 <ToastContainer />
-                <div className="row no-gutters justify-content-center">
+                <div className="row justify-content-center">
                     <div className="col-md-8">
                         <img src={selected_item.img} className="card-img" alt="..." />
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 card-info">
                         <div className="card-body">
                             <h3 className="card-title">{selected_item.name}</h3>
                             <h2 className="card-title"><strong>Rs:{selected_item.price}</strong></h2>

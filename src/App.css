@@ -63,7 +63,10 @@
     min-width: 40%;
 }
 
-
+/* product item */
+.card-info{
+    position: relative;
+}
 
 /* generate bill */
 .invoiceTitle{
