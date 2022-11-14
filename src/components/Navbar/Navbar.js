@@ -30,9 +30,9 @@ export const Navbar = () => {
 
             <div id="navbarNav">
                 <ul className="navbar-nav">
-                    <li className="nav-item">
+                    {/* <li className="nav-item">
                         <Link className="nav-link" to="/products">All Products</Link>
-                    </li>
+                    </li> */}
                     <li className="nav-item">
                         <Link className="nav-link" to="/about">About us</Link>
                     </li>
