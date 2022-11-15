@@ -1,9 +1,11 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { RESET_STATE } from '../../reducers/reducers'
 
 const GenerateBill = () => {
 
     const { All_items } = useSelector(state => state);
+    const dispatch = useDispatch();
 
     return (
         <div className='container'>
@@ -15,10 +17,10 @@ const GenerateBill = () => {
                 <div className="col-md-6 col-sm-12 invoicewrapper" >
                     <table className='invoice'>
                         <thead>
-                            <th>Image</th>
-                            <th>Item</th>
-                            <th>Qty</th>
-                            <th>Price</th>
+                            <td><strong>Image</strong></td>
+                            <td><strong>Item</strong></td>
+                            <td><strong>Qty</strong></td>
+                            <td><strong>Price</strong></td>
                         </thead>
                         <tbody>
 
@@ -42,7 +44,7 @@ const GenerateBill = () => {
                             </tr>
                             <tr>
                                 <td colSpan={4}>
-                                    <button className="btn btn-info PayBtn">Pay Bill</button>
+                                    <button className="btn btn-info PayBtn" onClick={()=>{dispatch(RESET_STATE())}}>Pay Bill</button>
                                 </td>
                             </tr>
                         </tbody>

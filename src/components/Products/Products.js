@@ -5,7 +5,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { FaPlusCircle } from "react-icons/fa";
-import { ADD_ITEM } from '../../actions/allActions';
+// import { ADD_ITEM } from '../../actions/allActions';
+import { ADD_ITEM } from '../../reducers/reducers';
+
 import { useRef } from 'react';
 import { useState } from 'react';
 
@@ -34,6 +36,10 @@ export const Products = () => {
         });
 
         notify();
+        // let idIndex = {
+        //     id, index
+        // }
+        
         // dispatching action ADD_ITEM
         dispatch(ADD_ITEM(id));
     }
@@ -77,7 +83,7 @@ export const Products = () => {
                                         <button className='btn btn-info'>Have a look</button>
                                     </Link>
                                     <button style={{ border: 'none' }} >
-                                        <FaPlusCircle style={Cartstyle} onClick={() => { AddItem(item.id) }} />
+                                        <FaPlusCircle style={Cartstyle} onClick={() => { AddItem(item.id, index) }} />
                                     </button>
                                 </div>
                             })

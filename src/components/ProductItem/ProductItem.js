@@ -6,7 +6,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { FaPlusCircle } from "react-icons/fa";
-import { ADD_ITEM } from '../../actions/allActions';
+// import { ADD_ITEM } from '../../actions/allActions';
+import { ADD_ITEM } from '../../reducers/reducers';
 
 export const ProductItem = () => {
 
@@ -34,8 +35,7 @@ export const ProductItem = () => {
     const Cartstyle = { fontSize: "300%", color: 'green', position: 'absolute', bottom: 100, right:1, }
 
     return <>
-        {
-            
+        { 
             <div className="card mb-2 item" style={{ maxWidth: 600, minWidth:260 }}>
                 <ToastContainer />
                 <div className="row justify-content-center">
