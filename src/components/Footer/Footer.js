@@ -3,17 +3,28 @@ import './Footer.css'
 import { Link } from 'react-router-dom'
 import logo from '../../images/logo.png'
 
+import { useEffect } from 'react'
+
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 const Footer = () => {
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
 
     const linkStyle = { textDecoration: 'none', color: "darkBlue" }
     return (
         <>
-            <footer className="page-footer font-small pt-4" style={{background: 'skyblue'}}>
+            <footer className="page-footer font-small pt-4" style={{ background: 'skyblue' }}>
                 <div className="container-fluid text-center text-md-left">
                     <div className="row">
                         <div className="col-md-6 mt-md-0 mt-3">
                             <h4 className="text-uppercase">
-                                <img src={logo} alt="" id='logo'/>
+                                <div data-aos="fade-right" style={{display: 'inline-block'}}>
+                                    <img src={logo} alt="" id='logo' />
+                                </div>
                                 ELITEMOVE Shoes</h4>
                             <p>Here you can use rows and columns to organize your footer content.</p>
                         </div>

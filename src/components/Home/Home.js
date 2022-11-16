@@ -8,6 +8,10 @@ import bg1 from '../../images/bg3.jpg'
 import bg2 from '../../images/bg2.jpg'
 import bg3 from '../../images/bg1.jpg'
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
 
 import { useDispatch, useSelector } from 'react-redux';
 import { ToastContainer, toast } from 'react-toastify';
@@ -40,9 +44,13 @@ export const Home = () => {
         dispatch(ADD_ITEM(id));
     }
 
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
     return (<>
         <ToastContainer />
-        <div id="carouselExampleCaptions" className="carousel carousel-fade" data-ride="carousel">
+        <div id="carouselExampleCaptions" className="carousel slide carousel-fade" data-ride="carousel">
             <ol className="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to={0} className="active" />
                 <li data-target="#carouselExampleCaptions" data-slide-to={1} />
@@ -81,7 +89,9 @@ export const Home = () => {
             </a>
         </div>
 
-        <h1 className='text-center'>OUR FEATURED SHOES</h1>
+        <div data-aos="fade-down">
+            <h1 className='text-center'>OUR FEATURED SHOES</h1>
+        </div>
         <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={4}
