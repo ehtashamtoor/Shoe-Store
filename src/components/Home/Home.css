@@ -1,0 +1,26 @@
+.carousel-item .carousel-caption {
+    position: absolute;
+    top: 130px;
+}
+
+
+
+.mySwiper {
+    width: 460px;
+}
+
+@media screen and (min-width: 450px) {
+    .mySwiper {
+        width: 450px;
+    }
+}
+@media screen and (min-width: 680px) {
+    .mySwiper {
+        width: 680px;
+    }
+}
+@media screen and (min-width: 1024px) {
+    .mySwiper {
+        width: 1024px;
+    }
+}
