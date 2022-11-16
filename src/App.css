@@ -4,17 +4,6 @@
    color: red;
 }
 
-.navbar{
-    display: flex;
-    justify-content: space-around;
-    font-weight: bold;
-}
-#navbarNav{
-    display: flex;
-}
-#cart{
-    position: relative;
-}
 #overlayOnIcon{
     visibility: hidden;
     display: flex;

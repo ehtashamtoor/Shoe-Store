@@ -1,0 +1,14 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+
+#logo{
+    width: 60px;
+}
+
+#cart{
+    position: relative;
+}
