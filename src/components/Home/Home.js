@@ -9,19 +9,39 @@ import bg2 from '../../images/bg2.jpg'
 import bg3 from '../../images/bg1.jpg'
 
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import { ADD_ITEM } from '../../reducers/reducers';
 
 export const Home = () => {
 
     const { All_items } = useSelector(state => state)
+    const dispatch = useDispatch()
+
     let products = All_items.products;
     let images = [products[14], products[13], products[11], products[10], products[9], products[10], products[2]]
 
+    // additem function
+    const AddItem = (id) => {
+
+        // toast styling
+        const notify = () => toast.success(`${All_items.products[id - 1].name} added to Cart`, {
+            position: toast.POSITION.TOP_CENTER,
+            autoClose: 1500,
+        });
+
+        notify();
+        // dispatching action ADD_ITEM
+        dispatch(ADD_ITEM(id));
+    }
+
     return (<>
+        <ToastContainer />
         <div id="carouselExampleCaptions" className="carousel carousel-fade" data-ride="carousel">
             <ol className="carousel-indicators">
                 <li data-target="#carouselExampleCaptions" data-slide-to={0} className="active" />
@@ -92,7 +112,7 @@ export const Home = () => {
                         <img src={item.img} alt={item.name} className='slideimg img-fluid' />
                         <h4>{item.name}</h4>
                         <h3>RS: <strong>{item.price}</strong></h3>
-                        <button className='btn btn-info m-2' onClick={() => { console.log(item.price) }}>Add to cart</button>
+                        <button className='btn btn-info m-2' onClick={() => { AddItem(item.id) }}>Add to cart</button>
                     </SwiperSlide>
                 })
             }
