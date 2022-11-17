@@ -103,6 +103,10 @@ export const Home = () => {
             autoplay={true}
             className="mySwiper"
             breakpoints={{
+                250: {
+                    width: 250,
+                    slidesPerView: 1,
+                },
                 450: {
                     width: 450,
                     slidesPerView: 1,
@@ -120,7 +124,7 @@ export const Home = () => {
             {
                 images.map((item, index) => {
                     return <SwiperSlide key={index}>
-                        <img src={item.img} alt={item.name} className='slideimg img-fluid' />
+                        <img src={item.img} alt={item.name} className='slideimg img-fluid swiperImg' />
                         <h4>{item.name}</h4>
                         <h3>RS: <strong>{item.price}</strong></h3>
                         <button className='btn btn-warning m-2' onClick={() => { AddItem(item.id) }}>Add to cart</button>

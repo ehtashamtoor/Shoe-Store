@@ -7,11 +7,22 @@
 
 .mySwiper {
     width: 460px;
+    margin: auto;
+    overflow: hidden;
 }
 
+.swiperImg{
+    width: 60%;
+}
+@media screen and (min-width: 250px) {
+    .mySwiper {
+        width: 250px;
+    }
+}
 @media screen and (min-width: 450px) {
     .mySwiper {
         width: 450px;
+        
     }
 }
 @media screen and (min-width: 680px) {
