@@ -11,6 +11,7 @@ import bg3 from '../../images/bg1.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -44,10 +45,10 @@ export const Home = () => {
         dispatch(ADD_ITEM(id));
     }
 
-
     useEffect(() => {
         AOS.init();
     }, [])
+
     return (<>
         <ToastContainer />
         <div id="carouselExampleCaptions" className="carousel slide carousel-fade" data-ride="carousel">
@@ -122,7 +123,7 @@ export const Home = () => {
                         <img src={item.img} alt={item.name} className='slideimg img-fluid' />
                         <h4>{item.name}</h4>
                         <h3>RS: <strong>{item.price}</strong></h3>
-                        <button className='btn btn-info m-2' onClick={() => { AddItem(item.id) }}>Add to cart</button>
+                        <button className='btn btn-warning m-2' onClick={() => { AddItem(item.id) }}>Add to cart</button>
                     </SwiperSlide>
                 })
             }

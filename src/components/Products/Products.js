@@ -36,10 +36,7 @@ export const Products = () => {
         });
 
         notify();
-        // let idIndex = {
-        //     id, index
-        // }
-        
+
         // dispatching action ADD_ITEM
         dispatch(ADD_ITEM(id));
     }
