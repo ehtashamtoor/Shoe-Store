@@ -29,8 +29,6 @@ const Footer = () => {
                             <p>Here you can use rows and columns to organize your footer content.</p>
                         </div>
 
-                        {/* <hr className="clearfix w-100 d-md-none pb-0" /> */}
-
                         <div className="col-md-6 mb-md-0 mb-3">
                             <h5 className="text-uppercase">GO TO</h5>
                             <ul className="list-unstyled">

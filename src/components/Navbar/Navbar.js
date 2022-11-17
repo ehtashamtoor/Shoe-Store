@@ -7,6 +7,9 @@ import { useSelector } from 'react-redux'
 import { FaCartPlus } from "react-icons/fa"
 import { useState } from 'react'
 
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 export const Navbar = () => {
     // cart styling
     const Cartstyle = { fontSize: "2em", color: 'red' }
@@ -23,6 +26,8 @@ export const Navbar = () => {
         } else {
             overlayIcon.current.style.visibility = 'hidden'
         }
+
+        AOS.init();// for animation
     }, [All_items.added_items.length])
 
 
@@ -30,7 +35,9 @@ export const Navbar = () => {
         <nav className="navbar navbar-expand-md navbar-light bg-info p-2 sticky-top">
 
             <Link className="navbar-brand" to="/">
-                <img src={logo} alt="" id='logo' />
+                <div data-aos="fade-right" style={{ display: 'inline-block' }}>
+                    <img src={logo} alt="" id='logo' />
+                </div>
                 ELITEMOVE
             </Link>
             <div>
