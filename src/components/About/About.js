@@ -16,7 +16,7 @@ export const About = () => {
     AOS.init();
 }, [])
   return (
-    <div className="container-fluid">
+    <div className="container-fluid aboutWrapper">
       <div data-aos="fade-down">
             <h1 className='text-center'>What our Customers say</h1>
         </div>
