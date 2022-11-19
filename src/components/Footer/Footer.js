@@ -33,7 +33,7 @@ const Footer = () => {
                             <h5 className="text-uppercase">GO TO</h5>
                             <ul className="list-unstyled">
                                 <li><Link to="/products" style={linkStyle}>All products</Link></li>
-                                <li><Link to="/about" style={linkStyle}>About Us</Link></li>
+                                <li><Link to="/" style={linkStyle}>Home Page</Link></li>
                             </ul>
                         </div>
                     </div>
