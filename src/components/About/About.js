@@ -22,7 +22,7 @@ export const About = () => {
         </div>
       <div className="row">
         <div className="col-lg-4 col-md-6">
-          <div className="card">
+          <div className="cardd">
             <div className="face front-face">
               <img src={neymar} alt="" className="profile" />
               <div className="pt-3 text-uppercase name">
@@ -42,7 +42,7 @@ export const About = () => {
           </div>
         </div>
         <div className="col-lg-4 col-md-6">
-          <div className="card">
+          <div className="cardd">
             <div className="face front-face">
               <img src={iniesta} alt="" className="profile" />
               <div className="pt-3 text-uppercase name">
@@ -60,7 +60,7 @@ export const About = () => {
           </div>
         </div>
         <div className="col-lg-4 col-md-12">
-          <div className="card">
+          <div className="cardd">
             <div className="face front-face">
               <img src={ramos} alt="" className="profile" />
               <div className="pt-3 text-uppercase name">

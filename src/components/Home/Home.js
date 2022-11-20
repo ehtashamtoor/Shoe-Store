@@ -12,7 +12,6 @@ import bg3 from '../../images/bg1.jpg'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 
 import { useDispatch, useSelector } from 'react-redux';
